@@ -1,0 +1,27 @@
+version: '3'
+
+services: 
+  nginx:
+    container_name: nginx
+    restart: always
+    build: 
+      context: ./docker/nginx
+      dockerfile: ./Dockerfile
+    volumes: 
+     - ./:/var/www
+     - ./docker/logs/nginx-error.log:/var/log/nginx/error.log
+     - ./docker/logs/nginx-access.log:/var/log/nginx/access.log
+    ports:
+     - "8000:80"
+    links:
+     - php
+  php:
+    container_name: php
+    restart: always
+    build:
+      context: ./docker/php
+      dockerfile: ./Dockerfile
+    ports:
+      - 9000:9000
+    volumes:
+     - ./:/var/www
