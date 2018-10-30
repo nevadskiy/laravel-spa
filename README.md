@@ -1,8 +1,7 @@
-# Docker-compose for Laravel Full-Stack Development
-
-
-##### For using Laravel echo server, application layout must contains the following section
+##### For using Laravel echo server, add the following sections 
 ```
+// to layout.blade.php, before <script src="{{ asset('app.js') }}"></script>
+
 <script>
   window.echoConfig = {
     host: {!! json_encode(env('ECHO_SERVER_HOST')) !!},
@@ -10,8 +9,15 @@
   };
 </script>
 ```
- And bootstrap.js
 ```
+// bootstrap.js
+
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+
 window.io = require('socket.io-client');
 
 const host = window.echoConfig.port
@@ -24,3 +30,10 @@ window.Echo = new Echo({
   host,
 });
 ``` 
+
+TODO: 
+- add aliases bash script
+- restructure README.md
+- add all laravel required php extensions
+- add debuger extension
+- figure it out with deployment
