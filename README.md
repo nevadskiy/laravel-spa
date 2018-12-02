@@ -39,4 +39,5 @@ window.Echo = new Echo({
 - figure it out with deployment
 - make .sh command to run environment
 - figure it out with user rights and artisan:make command
+    try: docker-compose run --user "$(id -u):$(id -g)" php-cli
 - separate testing environment
