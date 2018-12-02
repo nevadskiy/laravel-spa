@@ -39,3 +39,4 @@ window.Echo = new Echo({
 - figure it out with deployment
 - make .sh command to run environment
 - figure it out with user rights and artisan:make command
+- separate testing environment
