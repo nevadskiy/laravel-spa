@@ -11,6 +11,12 @@ down:
 build:
 	docker-compose up -d --build
 
+rebuild:
+	docker-compose build --no-cache
+
+remove-volumes:
+	docker-compose down --volumes
+
 s:
 	docker-compose ps
 

@@ -10,7 +10,7 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN apt-get update
 
 # Zip
-RUN apt-get install -y zlib1g-dev zip && docker-php-ext-install zip
+RUN apt-get install -y libzip-dev zip && docker-php-ext-configure zip --with-libzip && docker-php-ext-install zip
 
 # Curl
 RUN apt-get install -y libcurl3-dev curl && docker-php-ext-install curl
@@ -19,7 +19,7 @@ RUN apt-get install -y libcurl3-dev curl && docker-php-ext-install curl
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Custom php.ini config
-ADD ./custom.ini /usr/local/etc/php/conf.d/custom.ini
+COPY custom.ini /usr/local/etc/php/conf.d/custom.ini
 
 # Clean up
 RUN apt-get clean

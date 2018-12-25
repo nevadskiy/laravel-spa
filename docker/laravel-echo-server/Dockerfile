@@ -11,11 +11,7 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 
 # Install service dependencies
-RUN apk add --update \
-    python \
-    python-dev \
-    py-pip \
-    build-base
+RUN apk add --update python python-dev py-pip build-base
 
 # Install node dependencies
 RUN npm install

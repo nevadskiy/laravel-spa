@@ -2,7 +2,7 @@
 FROM nginx:mainline-alpine
 
 # Add config
-ADD ./default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Set up default directory
 WORKDIR /var/www
