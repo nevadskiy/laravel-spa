@@ -1,3 +1,8 @@
+##### For using aliases, apply source bash file
+```
+source aliases.sh
+``` 
+
 ##### For using Laravel echo server, add the following sections 
 ```
 // to layout.blade.php, before <script src="{{ asset('app.js') }}"></script>
@@ -32,12 +37,7 @@ window.Echo = new Echo({
 ``` 
 
 ### TODO: 
-- add aliases bash script
-- restructure README.md
-- add all laravel required php extensions
 - add debugger extension
 - figure it out with deployment
-- make .sh command to run environment
 - figure it out with user rights and artisan:make command
     try: docker-compose run --user "$(id -u):$(id -g)" php-cli
-- separate testing environment

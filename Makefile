@@ -40,7 +40,7 @@ test:
 	@docker-compose exec php-cli vendor/bin/phpunit
 
 autoload:
-	docker-compose exec php-cli composer dump-autoload
+	docker-compose exec php-cli composer du
 
 perm:
 	sudo chown ${USER}:${USER} bootstrap/cache storage app/ database/ resources/ tests/ -R
