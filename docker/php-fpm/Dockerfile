@@ -18,6 +18,10 @@ RUN apt-get install -y libcurl3-dev curl && docker-php-ext-install curl
 # BC Math
 RUN docker-php-ext-install bcmath
 
+# Xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+
 # MySQL
 RUN docker-php-ext-install pdo pdo_mysql
 
