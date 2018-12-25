@@ -68,6 +68,14 @@ services:
     - MYSQL_PASSWORD=app
     - MYSQL_DATABASE=app
 
+  ### Selenium for testing browser behaviour ######
+  selenium:
+    build:
+      context: docker/selenium
+      dockerfile: Dockerfile
+    links:
+      - nginx
+
   ### Redis ##############################
   redis:
     build:
