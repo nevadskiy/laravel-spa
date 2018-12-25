@@ -35,7 +35,7 @@ window.Echo = new Echo({
 - add aliases bash script
 - restructure README.md
 - add all laravel required php extensions
-- add debuger extension
+- add debugger extension
 - figure it out with deployment
 - make .sh command to run environment
 - figure it out with user rights and artisan:make command
