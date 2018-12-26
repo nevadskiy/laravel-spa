@@ -7,13 +7,15 @@ services:
       context: docker/nginx
       dockerfile: Dockerfile
     volumes:
-    - ./:/var/www
-    # Storing logs
-    - ./docker/nginx/logs:/var/log/nginx
+      - ./:/var/www
+      # Storing logs
+      - ./docker/nginx/logs:/var/log/nginx
     ports:
-    - 8080:80
+      - 8080:80
     links:
-    - php-fpm
+      - php-fpm
+    networks:
+      - internal
 
   ### PHP FastCGI Process Manager ###############
   php-fpm:
@@ -21,11 +23,16 @@ services:
       context: docker/php-fpm
       dockerfile: Dockerfile
     volumes:
-    - ./:/var/www
+      - ./:/var/www
     links:
-    - mysql
-    - redis
-    - mailhog
+      - mysql
+      - redis
+      - mailhog
+    environment:
+      XDEBUG_CONFIG: "remote_host=192.168.220.1"
+      PHP_IDE_CONFIG: "serverName=docker-server"
+    networks:
+      - internal
 
   ### PHP-CLI ##################################
   php-cli:
@@ -33,14 +40,19 @@ services:
       context: docker/php-cli
       dockerfile: Dockerfile
     volumes:
-    - ./:/var/www
+      - ./:/var/www
     links:
-    - mysql
-    - mysql-testing
-    - redis
-    - mailhog
+      - mysql
+      - mysql-testing
+      - redis
+      - mailhog
     # Do not down CLI after run
     tty: true
+    environment:
+      XDEBUG_CONFIG: "remote_host=192.168.220.1"
+      PHP_IDE_CONFIG: "serverName=Docker"
+    networks:
+      - internal
 
   ### MySQL Database ##########################
   mysql:
@@ -48,14 +60,14 @@ services:
       context: docker/mysql
       dockerfile: Dockerfile
     volumes:
-    - mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
     environment:
-    - MYSQL_ROOT_PASSWORD=secret
-    - MYSQL_USER=app
-    - MYSQL_PASSWORD=app
-    - MYSQL_DATABASE=app
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=app
+      - MYSQL_DATABASE=app
     ports:
-    - 33061:3306
+      - 33061:3306
 
   ### MySQL for testing ########################
   mysql-testing:
@@ -63,10 +75,10 @@ services:
       context: docker/mysql
       dockerfile: Dockerfile
     environment:
-    - MYSQL_ROOT_PASSWORD=secret
-    - MYSQL_USER=app
-    - MYSQL_PASSWORD=app
-    - MYSQL_DATABASE=app
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=app
+      - MYSQL_DATABASE=app
 
   ### Selenium for testing browser behaviour ######
   selenium:
@@ -82,9 +94,9 @@ services:
       context: docker/redis
       dockerfile: Dockerfile
     volumes:
-    - redis:/data
+      - redis:/data
     ports:
-    - 63791:6379
+      - 63791:6379
 
   ### Node ###############################
   node:
@@ -92,7 +104,7 @@ services:
       context: docker/node
       dockerfile: Dockerfile
     volumes:
-    - ./:/var/www
+      - ./:/var/www
     # Do not down CLI after run
     tty: true
 
@@ -102,17 +114,17 @@ services:
       context: docker/supervisor
       dockerfile: Dockerfile
     volumes:
-    - ./:/var/www
-    # Supervisor configurations
-    - ./docker/supervisor/conf.d:/etc/supervisor/conf.d
-    # Supervisor logs
-    - ./docker/supervisor/logs:/home/logs
-    - ./docker/supervisor/logs:/var/log
+      - ./:/var/www
+      # Supervisor configurations
+      - ./docker/supervisor/conf.d:/etc/supervisor/conf.d
+      # Supervisor logs
+      - ./docker/supervisor/logs:/home/logs
+      - ./docker/supervisor/logs:/var/log
     links:
-    - nginx
-    - mysql
-    - redis
-    - mailhog
+      - nginx
+      - mysql
+      - redis
+      - mailhog
 
   ### Mailhog (For mail testing) ####
   mailhog:
@@ -120,13 +132,21 @@ services:
       context: docker/mailhog
       dockerfile: Dockerfile
     ports:
-    # SMTP server
-    - 1026:1025
-    # Inbox web page
-    - 8026:8025
+      # SMTP server
+      - 1026:1025
+      # Inbox web page
+      - 8026:8025
 
 volumes:
   mysql:
     driver: local
   redis:
     driver: local
+
+networks:
+  internal:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.220.0/28

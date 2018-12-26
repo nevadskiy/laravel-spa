@@ -34,6 +34,9 @@ COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 # MySQL
 RUN docker-php-ext-install pdo pdo_mysql
 
+# Custom php.ini config
+COPY custom.ini /usr/local/etc/php/conf.d/custom.ini
+
 # Composer installation
 ENV COMPOSER_ALLOW_SUPERUSER 1
 RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
