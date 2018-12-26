@@ -3,6 +3,12 @@
 source aliases.sh
 ``` 
 
+###### Artisan command available via artisan alias like this
+```
+artisan make:controller UserController
+```
+Artisan commands runs from current user and have no permissions problems
+
 ##### For using Laravel echo server, add the following sections 
 ```
 // to layout.blade.php, before <script src="{{ asset('app.js') }}"></script>
@@ -38,5 +44,3 @@ window.Echo = new Echo({
 
 ### TODO:
 - figure it out with deployment
-- figure it out with user rights and artisan:make command
-    try: docker-compose run --user "$(id -u):$(id -g)" php-cli
