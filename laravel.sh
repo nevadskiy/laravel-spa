@@ -6,8 +6,9 @@
 docker-compose exec php-cli composer create-project --prefer-dist laravel/laravel laravel
 sudo chown ${USER}:${USER} laravel/ -R
 
-# Remove default configuration file
+# Remove default configuration files
 sudo rm laravel/.env.example
+sudo rm laravel/.env
 
 # Move app
 sudo mv laravel/** .
@@ -23,3 +24,7 @@ sudo chmod -R 777 storage
 
 # Install predis package for using redis container with php
 docker-compose exec php-cli composer require predis/predis
+
+# Add docker configuration file
+cp ./.env.example ./.env
+docker-compose exec php-cli php artisan key:generate
