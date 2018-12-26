@@ -36,8 +36,7 @@ window.Echo = new Echo({
 });
 ``` 
 
-### TODO: 
-- add debugger extension
+### TODO:
 - figure it out with deployment
 - figure it out with user rights and artisan:make command
     try: docker-compose run --user "$(id -u):$(id -g)" php-cli
