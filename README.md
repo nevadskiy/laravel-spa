@@ -44,3 +44,7 @@ window.Echo = new Echo({
 
 ### TODO:
 - figure it out with deployment
+- add all extensions to supervisor container
+- refactor make perm command
+- add networks to all backend containers
+- fix app url (add nginx expose port) inside .env.example config file
