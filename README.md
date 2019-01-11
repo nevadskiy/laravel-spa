@@ -1,3 +1,14 @@
+##### For using aliases, apply source bash file
+```
+source aliases.sh
+``` 
+
+###### Artisan command available via artisan alias like this
+```
+artisan make:controller UserController
+```
+Artisan commands runs from current user and have no permissions problems
+
 ##### For using Laravel echo server, add the following sections 
 ```
 // to layout.blade.php, before <script src="{{ asset('app.js') }}"></script>
@@ -31,8 +42,9 @@ window.Echo = new Echo({
 });
 ``` 
 
-TODO: 
-- restructure README.md
-- add all laravel required php extensions
-- add debuger extension
+### TODO:
 - figure it out with deployment
+- add all extensions to supervisor container
+- refactor make perm command
+- add networks to all backend containers
+- fix app url (add nginx expose port) inside .env.example config file
