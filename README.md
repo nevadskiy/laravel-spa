@@ -32,7 +32,6 @@ window.Echo = new Echo({
 ``` 
 
 TODO: 
-- add aliases bash script
 - restructure README.md
 - add all laravel required php extensions
 - add debuger extension
