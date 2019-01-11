@@ -8,11 +8,21 @@ up:
 down:
 	docker-compose down
 
+s:
+	docker-compose ps
+
+restart:
+	docker-compose down
+	docker-compose up -d
+
 build:
 	docker-compose up -d --build
 
-s:
-	docker-compose ps
+rebuild:
+	docker-compose build --no-cache
+
+remove-volumes:
+	docker-compose down --volumes
 
 #---------------------------
 # Application
@@ -37,9 +47,9 @@ autoload:
 	docker-compose exec php-cli composer dump-autoload
 
 perm:
-	sudo chown ${USER}:${USER} bootstrap/cache storage app/ database/ resources/ tests/ -R
 	sudo chmod -R 777 bootstrap/cache
 	sudo chmod -R 777 storage
+
 
 #---------------------------
 # Front-end
@@ -50,22 +60,3 @@ assets:
 
 watch:
 	docker-compose exec node yarn watch
-
-#---------------------------
-# Installation
-#---------------------------
-
-laravel:
-	# Create laravel app
-	# Composer does not allow creating inside existing directory
-	# So first laravel will be installed into laravel directory and then moved from
-	docker-compose exec php-cli composer create-project --prefer-dist laravel/laravel laravel
-	sudo chown ${USER}:${USER} laravel/ -R
-	sudo mv laravel/** .
-	# Move dot-starting files
-	sudo mv laravel/.??* .
-	sudo rm -r laravel
-	sudo chmod -R 777 bootstrap/cache
-	sudo chmod -R 777 storage
-	# Install predis to use redis as service
-	docker-compose exec php-cli composer require predis/predis
