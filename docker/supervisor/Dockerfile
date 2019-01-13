@@ -28,7 +28,7 @@ RUN docker-php-ext-install bcmath
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Crontab
-RUN apt-get update && apt-get install -y cron
+RUN apt-get install -y cron
 COPY cron.d/schedule /etc/cron.d
 RUN chmod -R 644 /etc/cron.d
 RUN touch /var/log/cron.log
