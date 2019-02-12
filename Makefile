@@ -34,6 +34,10 @@ migrate:
 seed:
 	docker-compose exec php-cli php artisan db:seed
 
+env:
+	cp ./.env.example ./.env
+	docker-compose exec php-cli php artisan key:generate
+
 refresh:
 	docker-compose exec php-cli php artisan migrate:refresh
 
@@ -42,7 +46,7 @@ tinker:
 
 test:
 	@docker-compose exec php-cli vendor/bin/phpunit
-	
+
 coverage:
 	docker-compose exec php-cli vendor/bin/phpunit --coverage-html tests/report
 

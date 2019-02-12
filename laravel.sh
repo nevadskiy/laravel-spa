@@ -7,6 +7,7 @@ docker-compose exec php-cli composer create-project --prefer-dist laravel/larave
 sudo chown ${USER}:${USER} laravel/ -R
 
 # Remove default configuration files
+sudo rm laravel/.gitignore
 sudo rm laravel/.env.example
 sudo rm laravel/.env
 
@@ -28,3 +29,6 @@ docker-compose exec php-cli composer require predis/predis
 # Add docker configuration file
 cp ./.env.example ./.env
 docker-compose exec php-cli php artisan key:generate
+
+# Install front-end assets
+docker-compose exec node yarn install
