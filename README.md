@@ -50,7 +50,13 @@ window.Echo = new Echo({
     namespace: 'App.Events',
     host
 });
-``` 
+```
+#### For testing
+Just add the following line to your phpunit.xml file
+```
+<env name="DB_HOST" value="mysql-testing"/>
+```
+
 
 ### TODO:
 - add eslint extension
