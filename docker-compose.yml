@@ -109,6 +109,19 @@ services:
     networks:
       - internal
 
+  ### Laravel Echo Server ################
+  laravel-echo-server:
+    build:
+      context: docker/laravel-echo-server
+      dockerfile: Dockerfile
+    ports:
+      - 6002:6001
+    links:
+      - redis
+      - supervisor
+    networks:
+      - internal
+
   ### Supervisor ###################
   supervisor:
     build:
