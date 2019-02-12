@@ -64,3 +64,4 @@ Just add the following line to your phpunit.xml file
 - add echo-server to supervisor conf
 - figure it out with deployment
 - add all extensions to supervisor container
+- add perms for daily logger permissions
