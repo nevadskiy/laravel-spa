@@ -142,14 +142,6 @@ services:
     networks:
       - internal
 
-  ### Selenium for testing browser behaviour ######
-  selenium:
-    build:
-      context: docker/selenium
-      dockerfile: Dockerfile
-    links:
-      - nginx
-
   ### Node ###############################
   node:
     build:
