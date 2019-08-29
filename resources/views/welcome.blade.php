@@ -18,6 +18,10 @@
     <body>
         <div id="app">
             <router-view></router-view>
+
+            <hr>
+            <router-link :to="{ name: 'about' }">About</router-link>
+            <router-link :to="{ name: 'home' }">Home</router-link>
         </div>
     </body>
 </html>

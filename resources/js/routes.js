@@ -8,10 +8,12 @@ export default {
         {
             path: '/',
             component: Home,
+            name: 'home',
         },
         {
             path: '/about',
             component: About,
+            name: 'about',
         },
     ],
 };
