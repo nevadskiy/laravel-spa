@@ -1,10 +1,10 @@
+import './bootstrap';
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes';
 
 Vue.use(VueRouter);
 
-require('./bootstrap');
 
 new Vue({
     el: '#app',
