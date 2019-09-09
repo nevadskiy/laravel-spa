@@ -59,6 +59,15 @@
                                 </li>
                             </ul>
                         </section>
+
+                        <section class="mb-8">
+                            <h5 class="uppercase font-bold mb-5">Stats</h5>
+                            <ul>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'site-stats' }">Site stats</router-link>
+                                </li>
+                            </ul>
+                        </section>
                     </aside>
 
                     <div class="flex-1">

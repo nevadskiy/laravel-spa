@@ -5,6 +5,7 @@ import Typography from './pages/Typography.vue';
 import Mascot from './pages/Mascot.vue';
 import Illustrations from './pages/Illustrations.vue';
 import Wallpapers from './pages/Wallpapers.vue';
+import SiteStats from './pages/SiteStats.vue';
 import NotFound from './pages/errors/NotFound.vue';
 
 // Dynamic import components
@@ -53,6 +54,11 @@ export default {
             path: '/wallpapers',
             component: Wallpapers,
             name: 'wallpapers',
+        },
+        {
+            path: '/site-stats',
+            component: SiteStats,
+            name: 'site-stats',
         },
         {
             path: '*',
