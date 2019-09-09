@@ -33,6 +33,7 @@ class Kernel extends HttpKernel
         Middleware\TrimStrings::class,
         ConvertEmptyStringsToNull::class,
         Middleware\TrustProxies::class,
+        Middleware\Cors::class,
     ];
 
     /**
