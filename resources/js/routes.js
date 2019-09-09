@@ -3,10 +3,12 @@ import LogoSymbol from './pages/LogoSymbol.vue';
 import Colors from './pages/Colors.vue';
 import Typography from './pages/Typography.vue';
 import Mascot from './pages/Mascot.vue';
-import LoadersAndAnimations from './pages/LoadersAndAnimations.vue';
 import Illustrations from './pages/Illustrations.vue';
 import Wallpapers from './pages/Wallpapers.vue';
 import NotFound from './pages/errors/NotFound.vue';
+
+// Dynamic import components
+let LoadersAndAnimations = () => import('./pages/LoadersAndAnimations.vue');
 
 export default {
     mode: 'history',
