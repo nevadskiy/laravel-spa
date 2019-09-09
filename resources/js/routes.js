@@ -6,6 +6,7 @@ import Mascot from './pages/Mascot.vue';
 import LoadersAndAnimations from './pages/LoadersAndAnimations.vue';
 import Illustrations from './pages/Illustrations.vue';
 import Wallpapers from './pages/Wallpapers.vue';
+import NotFound from './pages/errors/NotFound.vue';
 
 export default {
     mode: 'history',
@@ -51,5 +52,9 @@ export default {
             component: Wallpapers,
             name: 'wallpapers',
         },
+        {
+            path: '*',
+            component: NotFound
+        }
     ],
 };
