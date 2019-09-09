@@ -23,10 +23,11 @@
     },
 
     created() {
-      axios.get('/api/stats').then((response) => {
-        this.lessons = response.data.lessons;
-        this.series = response.data.series;
-      });
+      axios.get('http://localhost:8080/api/stats')
+        .then(({data}) => {
+          this.lessons = data.lessons;
+          this.series = data.series;
+        });
     }
   }
 </script>
