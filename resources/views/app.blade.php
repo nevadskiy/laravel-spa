@@ -24,14 +24,41 @@
 
                 <main class="flex">
                     <aside class="w-1/5">
-                        <ul>
-                            <li>
-                                <router-link :to="{ name: 'home' }">Home</router-link>
-                            </li>
-                            <li>
-                                <router-link :to="{ name: 'about' }">About</router-link>
-                            </li>
-                        </ul>
+                        <section class="mb-8">
+                            <h5 class="uppercase font-bold mb-5">The Brand</h5>
+                            <ul>
+                                <li class="text-sm">
+                                    <router-link :to="{ name: 'home' }">Logo</router-link>
+                                </li>
+                                <li class="text-sm">
+                                    <router-link :to="{ name: 'about' }">Logo Symbol</router-link>
+                                </li>
+                                <li class="text-sm">
+                                    <router-link :to="{ name: 'about' }">Colors</router-link>
+                                </li>
+                                <li class="text-sm">
+                                    <router-link :to="{ name: 'about' }">Typography</router-link>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="mb-8">
+                            <h5 class="uppercase font-bold mb-5">Doodles</h5>
+                            <ul>
+                                <li class="text-sm">
+                                    <router-link :to="{ name: 'home' }">Mascot</router-link>
+                                </li>
+                                <li class="text-sm">
+                                    <router-link :to="{ name: 'about' }">Illustrations</router-link>
+                                </li>
+                                <li class="text-sm">
+                                    <router-link :to="{ name: 'about' }">Loaders & Animations</router-link>
+                                </li>
+                                <li class="text-sm">
+                                    <router-link :to="{ name: 'about' }">Wallpapers</router-link>
+                                </li>
+                            </ul>
+                        </section>
                     </aside>
 
                     <div class="flex-1">
