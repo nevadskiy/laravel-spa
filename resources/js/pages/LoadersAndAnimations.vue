@@ -1,5 +1,5 @@
 <template>
-    <h1>About</h1>
+    <h1 class="text-3xl">Loaders & Animations</h1>
 </template>
 
 <script>

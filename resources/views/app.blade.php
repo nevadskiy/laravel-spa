@@ -28,16 +28,16 @@
                             <h5 class="uppercase font-bold mb-5">The Brand</h5>
                             <ul>
                                 <li class="text-sm">
-                                    <router-link :to="{ name: 'home' }">Logo</router-link>
+                                    <router-link :to="{ name: 'logo' }">Logo</router-link>
                                 </li>
                                 <li class="text-sm">
-                                    <router-link :to="{ name: 'about' }">Logo Symbol</router-link>
+                                    <router-link :to="{ name: 'logo-symbol' }">Logo Symbol</router-link>
                                 </li>
                                 <li class="text-sm">
-                                    <router-link :to="{ name: 'about' }">Colors</router-link>
+                                    <router-link :to="{ name: 'colors' }">Colors</router-link>
                                 </li>
                                 <li class="text-sm">
-                                    <router-link :to="{ name: 'about' }">Typography</router-link>
+                                    <router-link :to="{ name: 'typography' }">Typography</router-link>
                                 </li>
                             </ul>
                         </section>
@@ -46,16 +46,16 @@
                             <h5 class="uppercase font-bold mb-5">Doodles</h5>
                             <ul>
                                 <li class="text-sm">
-                                    <router-link :to="{ name: 'home' }">Mascot</router-link>
+                                    <router-link :to="{ name: 'mascot' }">Mascot</router-link>
                                 </li>
                                 <li class="text-sm">
-                                    <router-link :to="{ name: 'about' }">Illustrations</router-link>
+                                    <router-link :to="{ name: 'illustrations' }">Illustrations</router-link>
                                 </li>
                                 <li class="text-sm">
-                                    <router-link :to="{ name: 'about' }">Loaders & Animations</router-link>
+                                    <router-link :to="{ name: 'loaders-and-animations' }">Loaders & Animations</router-link>
                                 </li>
                                 <li class="text-sm">
-                                    <router-link :to="{ name: 'about' }">Wallpapers</router-link>
+                                    <router-link :to="{ name: 'wallpapers' }">Wallpapers</router-link>
                                 </li>
                             </ul>
                         </section>

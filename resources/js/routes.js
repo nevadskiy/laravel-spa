@@ -1,5 +1,11 @@
-import Home from './pages/Home.vue';
-import About from './pages/About.vue';
+import Logo from './pages/Logo.vue';
+import LogoSymbol from './pages/LogoSymbol.vue';
+import Colors from './pages/Colors.vue';
+import Typography from './pages/Typography.vue';
+import Mascot from './pages/Mascot.vue';
+import LoadersAndAnimations from './pages/LoadersAndAnimations.vue';
+import Illustrations from './pages/Illustrations.vue';
+import Wallpapers from './pages/Wallpapers.vue';
 
 export default {
     mode: 'history',
@@ -7,13 +13,43 @@ export default {
     routes: [
         {
             path: '/',
-            component: Home,
-            name: 'home',
+            component: Logo,
+            name: 'logo',
         },
         {
-            path: '/about',
-            component: About,
-            name: 'about',
+            path: '/logo-symbol',
+            component: LogoSymbol,
+            name: 'logo-symbol',
+        },
+        {
+            path: '/colors',
+            component: Colors,
+            name: 'colors',
+        },
+        {
+            path: '/typography',
+            component: Typography,
+            name: 'typography',
+        },
+        {
+            path: '/mascot',
+            component: Mascot,
+            name: 'mascot',
+        },
+        {
+            path: '/loaders-and-animations',
+            component: LoadersAndAnimations,
+            name: 'loaders-and-animations',
+        },
+        {
+            path: '/illustrations',
+            component: Illustrations,
+            name: 'illustrations',
+        },
+        {
+            path: '/wallpapers',
+            component: Wallpapers,
+            name: 'wallpapers',
         },
     ],
 };
