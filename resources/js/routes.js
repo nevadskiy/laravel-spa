@@ -8,7 +8,7 @@ import Wallpapers from './pages/Wallpapers.vue';
 import NotFound from './pages/errors/NotFound.vue';
 
 // Dynamic import components
-let LoadersAndAnimations = () => import('./pages/LoadersAndAnimations.vue');
+let LoadersAndAnimations = () => import(/* webpackChunkName: 'loaders' */'./pages/LoadersAndAnimations.vue');
 
 export default {
     mode: 'history',
