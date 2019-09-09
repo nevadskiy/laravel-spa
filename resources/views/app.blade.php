@@ -27,17 +27,17 @@
                         <section class="mb-8">
                             <h5 class="uppercase font-bold mb-5">The Brand</h5>
                             <ul>
-                                <li class="text-sm">
-                                    <router-link :to="{ name: 'logo' }">Logo</router-link>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'logo' }" exact>Logo</router-link>
                                 </li>
-                                <li class="text-sm">
-                                    <router-link :to="{ name: 'logo-symbol' }">Logo Symbol</router-link>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'logo-symbol' }">Logo Symbol</router-link>
                                 </li>
-                                <li class="text-sm">
-                                    <router-link :to="{ name: 'colors' }">Colors</router-link>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'colors' }">Colors</router-link>
                                 </li>
-                                <li class="text-sm">
-                                    <router-link :to="{ name: 'typography' }">Typography</router-link>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'typography' }">Typography</router-link>
                                 </li>
                             </ul>
                         </section>
@@ -45,17 +45,17 @@
                         <section class="mb-8">
                             <h5 class="uppercase font-bold mb-5">Doodles</h5>
                             <ul>
-                                <li class="text-sm">
-                                    <router-link :to="{ name: 'mascot' }">Mascot</router-link>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'mascot' }">Mascot</router-link>
                                 </li>
-                                <li class="text-sm">
-                                    <router-link :to="{ name: 'illustrations' }">Illustrations</router-link>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'illustrations' }">Illustrations</router-link>
                                 </li>
-                                <li class="text-sm">
-                                    <router-link :to="{ name: 'loaders-and-animations' }">Loaders & Animations</router-link>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'loaders-and-animations' }">Loaders & Animations</router-link>
                                 </li>
-                                <li class="text-sm">
-                                    <router-link :to="{ name: 'wallpapers' }">Wallpapers</router-link>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'wallpapers' }">Wallpapers</router-link>
                                 </li>
                             </ul>
                         </section>
