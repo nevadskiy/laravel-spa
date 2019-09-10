@@ -15,7 +15,7 @@ class AdminUserTableSeeder extends Seeder
     {
         User::create([
             'email' => 'admin@mail.com',
-            'password' => 'secret',
+            'password' => bcrypt('secret'),
             'api_token' => Str::random(80),
         ]);
     }
