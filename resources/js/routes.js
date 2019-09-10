@@ -6,6 +6,7 @@ import Mascot from './pages/Mascot.vue';
 import Illustrations from './pages/Illustrations.vue';
 import Wallpapers from './pages/Wallpapers.vue';
 import SiteStats from './pages/SiteStats.vue';
+import Achievements from './pages/Achievements.vue';
 import NotFound from './pages/errors/NotFound.vue';
 
 // Dynamic import components
@@ -59,6 +60,11 @@ export default {
             path: '/site-stats',
             component: SiteStats,
             name: 'site-stats',
+        },
+        {
+            path: '/achievements',
+            component: Achievements,
+            name: 'achievements',
         },
         {
             path: '*',
