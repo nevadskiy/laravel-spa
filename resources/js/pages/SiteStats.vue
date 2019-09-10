@@ -22,12 +22,18 @@
       };
     },
 
+    methods: {
+      fetch() {
+        axios.get('http://localhost:8080/api/stats')
+          .then(({data}) => {
+            this.lessons = data.lessons;
+            this.series = data.series;
+          });
+      }
+    },
+
     created() {
-      axios.get('http://localhost:8080/api/stats')
-        .then(({data}) => {
-          this.lessons = data.lessons;
-          this.series = data.series;
-        });
+      this.fetch();
     }
   }
 </script>
