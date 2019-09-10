@@ -10,14 +10,22 @@ Route::get('stats', function () {
     ];
 });
 
-Route::get('achievements', function () {
-    $achievements = [];
+Route::group([
+    'middleware' => 'auth:api'
+], function () {
+    Route::get('user', function (Request $request) {
+        return $request->user();
+    });
 
-    foreach (range(1, 5) as $i) {
-        $achievements[] = "Your #{$i} achievement";
-    }
+    Route::get('achievements', function () {
+        $achievements = [];
 
-    return response()->json($achievements, Response::HTTP_OK);
+        foreach (range(1, 5) as $i) {
+            $achievements[] = "Your #{$i} achievement";
+        }
+
+        return response()->json($achievements, Response::HTTP_OK);
+    });
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

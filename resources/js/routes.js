@@ -7,6 +7,7 @@ import Illustrations from './pages/Illustrations.vue';
 import Wallpapers from './pages/Wallpapers.vue';
 import SiteStats from './pages/SiteStats.vue';
 import Achievements from './pages/Achievements.vue';
+import AboutUser from './pages/AboutUser.vue';
 import NotFound from './pages/errors/NotFound.vue';
 
 // Dynamic import components
@@ -65,6 +66,11 @@ export default {
             path: '/achievements',
             component: Achievements,
             name: 'achievements',
+        },
+        {
+            path: '/about-user',
+            component: AboutUser,
+            name: 'about-user',
         },
         {
             path: '*',

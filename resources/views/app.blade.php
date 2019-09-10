@@ -69,6 +69,9 @@
                                 <li class="font-light">
                                     <router-link active-class="font-bold" :to="{ name: 'achievements' }">Your achievements</router-link>
                                 </li>
+                                <li class="font-light">
+                                    <router-link active-class="font-bold" :to="{ name: 'about-user' }">About user</router-link>
+                                </li>
                             </ul>
                         </section>
                     </aside>
