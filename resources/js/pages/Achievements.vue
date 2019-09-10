@@ -23,7 +23,7 @@
 
     methods: {
       fetch() {
-        axios.get('/api/achievements')
+        axios.get('/api/achievements?api_token=5XYLVZsHfQud3qCwneYoeYm5aeoVvBfRHMzjzUuTafLgwNqTqjuR9YQ6TZkg9NBCWSaGkaszKHRFBqHp')
           .then(({ data }) => {
             this.achievements = data;
           });
